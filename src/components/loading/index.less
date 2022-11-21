@@ -1,0 +1,21 @@
+.loading {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid #eee;
+  border-top-color: dodgerblue;
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

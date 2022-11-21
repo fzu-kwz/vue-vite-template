@@ -1,0 +1,103 @@
+/* 全局样式 */
+
+// body样式
+body {
+  margin: 0;
+}
+
+// 链接样式
+.nav-link {
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+// 遮罩层样式
+.mask {
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 弹出框样式
+.tooltip {
+  display: block;
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  width: 200px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+
+  @keyframes example {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+// 文本域样式
+textarea {
+  resize: none;
+  flex-shrink: 1;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #aaa;
+  outline: #409EFF;
+  transition: all .1s;
+  font-size: 14px;
+
+  &:focus {
+    border: 1px solid #409EFF;
+    box-shadow: 0 0 1px 2px #daebff;
+  }
+
+  &:disabled {
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+  }
+
+  &:placeholder-shown {
+    font-size: 14px;
+  }
+}
+
+// svg图表样式
+.icon {
+  cursor: pointer;
+  opacity: .5;
+  transition: all .3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,87 @@
+@hover-color: #409EFF;
+@size: 28px;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  &-num,
+  &-icon,
+  &-jump,
+  &-jump-btn,
+  .ellipsis {
+    box-sizing: border-box;
+    width: @size;
+    height: @size;
+    line-height: @size;
+    text-align: center;
+    color: #000;
+    transition: all .1s;
+    border: 1px solid transparent;
+    padding: 0;
+    margin-top: 2px;
+    margin-right: 2px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    background-color: #fff;
+
+    &:hover {
+      color: @hover-color;
+    }
+  }
+
+  .ellipsis {
+    width: 20px;
+  }
+
+  &-icon {
+    width: 20px;
+
+    &-before {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &-next {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      margin-right: 10px;
+    }
+
+    &:disabled {
+      color: #aaa;
+      cursor: not-allowed;
+    }
+  }
+
+  &-num {
+    &.active {
+      color: @hover-color;
+      border: 1px solid @hover-color;
+      border-radius: 2px;
+    }
+  }
+
+  &-jump {
+    width: 50px;
+    height: 30px;
+    outline: #ccc;
+    cursor: text;
+    border: 1px solid #aaa;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &-jump-btn {
+    &:disabled {
+      color: #aaa;
+      cursor: not-allowed;
+    }
+  }
+}

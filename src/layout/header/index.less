@@ -1,0 +1,114 @@
+.color {
+  color: #409EFF;
+  background-color: #daebff;
+}
+
+.height {
+  height: 48px;
+  line-height: 48px;
+}
+
+header {
+  z-index: 9;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-bottom: 1px solid #eee;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 5px #eee;
+
+  .header-svg {
+    width: 40px;
+    .height();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav {
+    display: inline-block;
+
+    .header-nav-link {
+      display: inline-block;
+      box-sizing: border-box;
+      .height();
+      padding: 0 20px;
+      border-bottom: 2px solid transparent;
+      color: #000;
+
+      &:hover {
+        background-color: #daebff;
+        cursor: pointer;
+      }
+
+      &:focus {
+        .color();
+        border-bottom-color: #bbb;
+      }
+    }
+
+    .is-active,
+    .router-link-active {
+      .color();
+      border-bottom-color: #bbb;
+    }
+  }
+
+  .fold-svg {
+    display: none;
+  }
+
+  @media screen and(max-width: 768px) {
+    .fold-svg {
+      display: flex;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+}
+
+.mask {
+  display: block;
+
+  .small-nav {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    &-link {
+      color: #000;
+      .height();
+      font-size: 20px;
+      font-weight: lighter;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      box-sizing: border-box;
+
+      &:hover {
+        .color();
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 768px) {
+  header {
+    padding: 0;
+  }
+}
+
+.util-btn-box {
+  display: flex;
+}
+
+// 提示性字体样式
+.tip {
+  display: block;
+  color: rgb(150, 150, 150);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
