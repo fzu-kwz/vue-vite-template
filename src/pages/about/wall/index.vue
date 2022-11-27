@@ -7,7 +7,7 @@
       :key="item.id"
       @click="photoClick(item.url)"
     >
-      <LoadImg :url="item.url"></LoadImg>
+      <LazyLoadImg :src="item.url" :scroll-node="scrollNode"></LazyLoadImg>
     </div>
   </div>
   <Dialog :visible="dialogVisible" @close="dialogVisible = false">
@@ -20,12 +20,14 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive, ref } from "vue";
 
+import { LazyLoadImg } from "k-vue3-comp";
 import Skeleton from "@/components/skeleton/index.vue";
 import Dialog from "@/components/dialog/index.vue";
-import LoadImg from "@/components/loadImg/index.vue";
 
 import { getPhotoList } from "@/api/photo";
 import { Paging, Photo } from "@/types";
+
+const scrollNode = document.getElementsByTagName("main")[0];
 
 const dialogVisible = ref(false);
 const currentPhoto = ref();

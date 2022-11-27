@@ -9,7 +9,7 @@ import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 
 import Layout from "@/layout/index.vue";
-import BackTop from "@/components/back-top/index.vue";
+import { BackTop } from "k-vue3-comp";
 
 const store = useStore();
 const route = useRoute();

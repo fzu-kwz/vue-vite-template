@@ -28,24 +28,12 @@ npm run build
         │  ├─img               图片
         │  └─style             样式
         ├─components           组件
-        │  ├─back-top          返回顶部
-        │  ├─c-button          按钮
-        │  ├─c-form            表单
-        │  │  └─form-item      表单项
-        │  ├─c-input           输入框
-        │  ├─c-select          下拉框
         │  ├─c-table           表格
         │  ├─dialog            遮罩层
         │  ├─email-box         邮箱弹窗
-        │  ├─empty             空状态
-        │  ├─loadImg           懒加载图片
-        │  ├─loading           加载提示
         │  ├─login-box         登录弹窗
         │  ├─navigation-record 导航栏
-        │  ├─pagination        分页
         │  ├─skeleton          骨架屏
-        │  └─upload            上传
-        ├─hooks                公用钩子函数
         ├─layout               总体布局
         │  ├─aside             侧边栏
         │  ├─container         布局容器

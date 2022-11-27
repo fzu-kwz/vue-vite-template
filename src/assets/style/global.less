@@ -55,40 +55,11 @@ body {
   }
 }
 
-// 文本域样式
-textarea {
-  resize: none;
-  flex-shrink: 1;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 18px;
-  line-height: 20px;
-  border-radius: 5px;
-  padding: 5px;
-  border: 1px solid #aaa;
-  outline: #409EFF;
-  transition: all .1s;
-  font-size: 14px;
-
-  &:focus {
-    border: 1px solid #409EFF;
-    box-shadow: 0 0 1px 2px #daebff;
-  }
-
-  &:disabled {
-    background-color: #fff;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    border-radius: 0;
-  }
-
-  &:placeholder-shown {
-    font-size: 14px;
-  }
-}
-
 // svg图表样式
 .icon {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   cursor: pointer;
   opacity: .5;
   transition: all .3s;

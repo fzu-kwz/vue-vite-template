@@ -1,46 +1,44 @@
 <template>
   <div class="email-form">
-    <CForm footer>
-      <FormItem width="0">
-        <CSelect
+    <KForm footer>
+      <FormItem label-width="0">
+        <KSelect
           v-model="adviceForm.title"
           style="width: 100%;"
           :options="adviceOptions"
           allow-clear
-        ></CSelect>
+        ></KSelect>
       </FormItem>
-      <FormItem width="0">
-        <textarea
-          name="comment"
+      <FormItem label-width="0">
+        <KInput
+          type="textarea"
           cols="30"
-          rows="8"
+          rows="6"
           maxlength="100"
           v-model="adviceForm.advice"
           placeholder="Leave your valuable advice"
-        ></textarea>
-      </FormItem>
-      <template v-slot:footer>
-        <CButton type="primary" style="width: 100%;" @click="sendAdvice"
-          >Submit</CButton
         >
-      </template>
-    </CForm>
+        </KInput>
+      </FormItem>
+      <FormItem label-width="0">
+        <KButton type="primary" style="width: 100%;" @click="sendAdvice"
+          >Submit</KButton
+        >
+      </FormItem>
+    </KForm>
   </div>
 </template>
 
 <script setup lang="ts">
 import { reactive } from "vue";
 
-import CForm from "@/components/c-form/index.vue";
-import FormItem from "@/components/c-form/form-item/index.vue";
-import CButton from "@/components/c-button/index.vue";
-import CSelect from "@/components/c-select/index.vue";
+import { KForm, FormItem, KButton, KSelect, KInput } from "k-vue3-comp";
 
 import { createTip } from "@/utils/tip";
 import { Advice, Option } from "@/types";
 import { send } from "@/api/email";
 
-const adviceOptions: Option[] = [
+const adviceOptions: Array<Option> = [
   {
     value: "Bug",
     name: "Bug",

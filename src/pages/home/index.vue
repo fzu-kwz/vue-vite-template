@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import Loading from "@/components/loading/index.vue";
+import { Loading } from "k-vue3-comp";
 
 const loading = ref(true);
 

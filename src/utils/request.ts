@@ -6,7 +6,7 @@ const proxy = "/api/v1";
 
 export function request(config: AxiosRequestConfig): Promise<any> {
   const instance = axios.create({
-    baseURL: localUrl,
+    baseURL: proxy,
     timeout: 5000,
   });
 

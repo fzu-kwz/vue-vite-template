@@ -1,22 +1,23 @@
 <template>
   <div class="login-form">
-    <CForm footer>
+    <KForm footer>
       <FormItem label-text="username" width="120">
-        <CInput v-model="loginForm.username"></CInput>
+        <KInput maxlength="10" v-model="loginForm.username"></KInput>
       </FormItem>
       <FormItem label-text="password" width="120">
-        <CInput
+        <KInput
           type="password"
+          maxlength="10"
           v-model="loginForm.password"
-          @keyup.enter="login"
-        ></CInput>
+          allow-view
+        ></KInput>
       </FormItem>
-      <template v-slot:footer>
-        <CButton type="primary" style="width: 100%;" @click="login"
-          >Login</CButton
+      <FormItem width="120">
+        <KButton type="primary" style="width: 100%;" @click="login"
+          >Login</KButton
         >
-      </template>
-    </CForm>
+      </FormItem>
+    </KForm>
   </div>
 </template>
 
@@ -24,10 +25,7 @@
 import { reactive } from "vue";
 import { useStore } from "vuex";
 
-import CForm from "@/components/c-form/index.vue";
-import FormItem from "@/components/c-form/form-item/index.vue";
-import CInput from "@/components/c-input/index.vue";
-import CButton from "@/components/c-button/index.vue";
+import { KForm, FormItem, KInput, KButton } from "k-vue3-comp";
 
 import { createTip } from "@/utils/tip";
 import { getUser } from "@/api/user";
