@@ -1,10 +1,10 @@
 <template>
   <Layout></Layout>
-  <BackTop />
+  <BackTop :back-top-node="backTopNode" />
 </template>
 
 <script setup lang="ts">
-import { watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 
@@ -13,6 +13,11 @@ import { BackTop } from "k-vue3-comp";
 
 const store = useStore();
 const route = useRoute();
+
+const backTopNode = ref();
+onMounted(() => {
+  backTopNode.value = document.getElementsByTagName("main")[0];
+});
 
 watch(route, (newRoute) => {
   store.commit("updatecurrentPath", newRoute.path);
