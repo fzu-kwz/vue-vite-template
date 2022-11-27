@@ -18,6 +18,5 @@ router.beforeEach((to, from, next) => {
 });
 
 const app = createApp(App);
-const appNode = document.getElementById("app") as HTMLElement;
 app.use(router).use(store);
-app.mount(appNode);
+app.mount("#app");
