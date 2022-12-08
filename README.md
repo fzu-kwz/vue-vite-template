@@ -25,29 +25,15 @@ npm run build
         ├─api                  接口
         ├─assets               静态文件
         │  ├─icon              图标
-        │  ├─img               图片
         │  └─style             样式
         ├─components           组件
-        │  ├─c-table           表格
-        │  ├─dialog            遮罩层
-        │  ├─email-box         邮箱弹窗
-        │  ├─login-box         登录弹窗
-        │  ├─navigation-record 导航栏
-        │  ├─skeleton          骨架屏
         ├─layout               总体布局
-        │  ├─aside             侧边栏
-        │  ├─container         布局容器
-        │  ├─footer            底部
-        │  ├─header            头部
-        │  └─main              主体
         ├─pages                页面
         │  ├─about             about页面
-        │  │  ├─upload         上传图片页面
-        │  │  └─wall           图片集页面
+        │  │  ├─upload         upload页面
+        │  │  └─wall           wall页面
         │  └─home              home页面
         ├─router               路由
-        ├─store                状态树
-        ├─types                数据类型
         └─utils                工具
         │  App.vue             主页面
         │  main.ts             主入口

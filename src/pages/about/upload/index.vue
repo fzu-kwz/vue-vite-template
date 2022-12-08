@@ -1,18 +1,26 @@
 <template>
-  <div class="photo-upload">
-    <div class="photo-upload-form">
+  <Upload
+    :multiple="true"
+    :max-size="1024 * 1024 * 2"
+    :limit="3"
+    accept="image/*"
+    :progress="progress"
+    @upload="uploadPhoto"
+  >
+    <img
+      class="add-icon"
+      src="@/assets/icon/add.svg"
+      alt="add"
+      width="30"
+      height="30"
+    />
+    <template #tip>
       <div class="tip">
-        The quantity shall not exceed 3 pieces and the size shall not exceed 10M
+        Only accept pictures, file size no more than 2MB and the number of files
+        no more than 3
       </div>
-      <Upload
-        multiple
-        :limit="3"
-        :maxSize="1024 * 1024 * 10"
-        @upload="uploadPhoto"
-        :percentage="progress"
-      ></Upload>
-    </div>
-  </div>
+    </template>
+  </Upload>
 </template>
 
 <script setup lang="ts">

@@ -3,12 +3,10 @@
     <Loading v-if="loading"></Loading>
     <div v-else>
       <p class="introduction">
-        A simple Vue + Ts + Vite template
-      </p>
-      <p class="more">
-        <a href="https://github.com/fzu-kwz" target="_blank">
-          <img src="@/assets/img/github.png" alt="github.png" />
-          <span>GitHub Address</span>
+        <span>A simple Vue + Ts + Vite template</span>
+        <a href="https://github.com/fzu-kwz/vue-vite-template" target="_blank">
+          <img src="@/assets/icon/github.png" alt="github.png" width="24" />
+          <span>Github address</span>
         </a>
       </p>
     </div>

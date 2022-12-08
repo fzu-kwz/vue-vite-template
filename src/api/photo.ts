@@ -1,5 +1,5 @@
 import { request } from "@/utils/request";
-import { Photo } from "@/types";
+
 import { Ref } from "vue";
 
 // url前缀
@@ -8,6 +8,7 @@ const prefix = "/photo";
 /**
  * @description 上传图片
  * @param data 文件流
+ * @param progress 进度值
  * @returns axios实例
  */
 export function upload(data: FormData, progress: Ref<number>) {
@@ -17,30 +18,9 @@ export function upload(data: FormData, progress: Ref<number>) {
     data,
     // 上传进度
     onUploadProgress: (progressEvent: ProgressEvent) => {
+      console.log(progressEvent);
+      
       progress.value = ((progressEvent.loaded / progressEvent.total) * 100) | 0;
     },
-  });
-}
-
-/**
- * @description 获取photo数据
- * @returns axios实例
- */
-export function getPhotoList(page?: number, size?: number) {
-  return request({
-    url: `${prefix}/list?page=${page}&size=${size}`,
-    method: "GET",
-  });
-}
-
-/**
- * @description 删除photo
- * @returns axios实例
- */
-export function deletePhoto(data: Photo) {
-  return request({
-    url: prefix,
-    method: "POST",
-    data,
   });
 }

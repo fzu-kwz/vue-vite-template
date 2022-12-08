@@ -15,20 +15,20 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/about",
     name: "about",
-    redirect: "/about/wall",
+    redirect: "/about/upload",
     meta: { title: "About" },
     children: [
       {
         path: "/about/upload",
         name: "about-upload",
         component: Upload,
-        meta: { title: "AboutUpload" },
+        meta: { title: "Upload" },
       },
       {
         path: "/about/wall",
         name: "about-wall",
         component: Wall,
-        meta: { title: "AboutWall" },
+        meta: { title: "Wall" },
       },
     ],
   },
