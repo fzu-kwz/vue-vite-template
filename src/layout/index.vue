@@ -4,7 +4,7 @@
       <Menu class="header-nav">
         <MenuItem
           class="header-link"
-          v-for="item in asideRoutes"
+          v-for="item in headerRoutes"
           :route="item.path"
         >
           <template #title>{{ item.name }}</template>
