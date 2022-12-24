@@ -26,22 +26,25 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { Upload } from "k-vue3-comp";
+import { Upload, Tip } from "burger-ui";
 
 import { upload } from "@/api/photo";
-import { createTip } from "@/utils/tip";
 
 const progress = ref();
 
-const uploadPhoto = async (data: FormData) => {
-  const res = await upload(data, progress);
+const uploadPhoto = async (files: Array<File>) => {
+  const data = new FormData();
+  files.forEach((item, index) => {
+    data.append("file" + index, item);
+  });
+  /* const res = await upload(data, progress);
   if (res) {
     res.code === 200
-      ? createTip("Uploaded successfully!")
-      : createTip("Upload failed!");
+      ? Tip({ message: "Uploaded successfully!" })
+      : Tip({ message: "Upload failed!" });
   } else {
-    createTip("Upload failed!");
-  }
+    Tip({ message: "Upload failed!" });
+  } */
 };
 </script>
 

@@ -20,40 +20,50 @@
       />
     </Header>
     <Container style="height: calc(100% - 48px);">
-      <Aside v-show="route.path !== '/home'">
+      <Aside v-if="route.path !== '/home'" :width="100">
         <Menu>
           <MenuItem v-for="item in asideRoutes" :route="item.path">
             <template #title>{{ item.name }}</template>
           </MenuItem>
         </Menu>
       </Aside>
-      <Main>
+      <Main style="position: relative;">
         <router-view></router-view>
       </Main>
     </Container>
   </Container>
 
-  <Teleport to="body">
-    <div
-      class="mask"
-      :tabindex="-1"
-      v-show="navVisible"
-      @click="navVisible = false"
-    >
-      <Menu style="background-color: #fff; text-align: center;">
-        <MenuItem v-for="item in headerRoutes" :route="item.path">
-          <template #title>{{ item.name }}</template>
-        </MenuItem>
-      </Menu>
-    </div>
-  </Teleport>
+  <Drawer
+    v-model:visible="navVisible"
+    position="top"
+    :width="100"
+    :show-close="false"
+  >
+    <Menu style="background-color: #fff; text-align: center;">
+      <MenuItem
+        v-for="item in headerRoutes"
+        :route="item.path"
+        @click="navVisible = false"
+      >
+        <template #title>{{ item.name }}</template>
+      </MenuItem>
+    </Menu></Drawer
+  >
 </template>
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { useRoute } from "vue-router";
 
-import { Header, Main, Aside, Container, Menu, MenuItem } from "k-vue3-comp";
+import {
+  Header,
+  Main,
+  Aside,
+  Container,
+  Menu,
+  MenuItem,
+  Drawer,
+} from "burger-ui";
 
 const route = useRoute();
 

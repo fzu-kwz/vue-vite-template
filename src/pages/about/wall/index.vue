@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { Skeleton } from "k-vue3-comp";
+import { Skeleton } from "burger-ui";
 </script>
 
 <style lang="less" scoped>
